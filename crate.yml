@@ -59,6 +59,7 @@ crate-data:
       # [message] - Basic message, just shows it in chat.
       # [broadcast] - Broadcasts the message to everyone online.
       # [title] - Displays a title for the player that is opening. Usage: [title] TITLE | Subtitle | TIME IT'LL SHOW (int seconds)
+      # Example: [title] Title will be this | This will be subtitle | 5
       # [firework] - Spawns a firework on top of the player. Usage: [firework] red,green,blue;red,green,blue
       # On fireworks separate each RBG with a comma and each color with a ;. Example: [fireworks] 200,0,0;0,200,0;0,0,200
       on-open:

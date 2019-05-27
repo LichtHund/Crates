@@ -1,0 +1,92 @@
+# Crate data, don't delete, works as a marker.
+crate-data:
+
+  # This is the name of your crate, that'll be displayed on top of the chest.
+  display-name: '&3&lCustom &3&lCrate'
+
+  # How many chests a player is allowed to open, default 4.
+  allowed-open-chests: 4
+
+  # This is where it saves all the crates you have set in the server, deleting will remove it from the world.
+  crate-locations: []
+
+  # Customize some messages.
+  # On-Start is when the crate starts.
+  # On-End is when the crate ends.
+  # The value inside the brackets mean the type of message, it can either be:
+  # [message] - Basic message, just shows it in chat.
+  # [broadcast] - Broadcasts the message to everyone online.
+  # [title] - Displays a title for the player that is opening. Usage: [title] TITLE | Subtitle | TIME IT'LL SHOW (int seconds)
+  # [firework] - Spawns a firework on top of the player. Usage: [firework] red,green,blue;red,green,blue
+  # On fireworks separate each RBG with a comma and each color with a ;. Example: [fireworks] 200,0,0;0,200,0;0,0,200
+  message:
+    on-start:
+      - "[message] &3You're opening a &3&lCrate!"
+      - "[title] &3You're opening a &3&lCrate!"
+    on-end:
+      - "[message] &3You're closing a &3&lCrate!"
+      - "[title] &3You're opening a &3&lCrate!|&cSubtitle|40"
+
+  # Customize the information about the key.
+  key:
+
+    # The item the key will be, default: TRIPWIRE_HOOK
+    item: 'TRIPWIRE_HOOK'
+
+    # The display name of the key
+    name: '&c&lCrate &3&lKey!'
+
+    # The lore of the key.
+    lore:
+      - '&3&lUse this key to open a &3&lCrate &3&land receive rewards!'
+
+  # Here is where the crate rewards are setup.
+  rewards:
+
+    # Make sure to never repeat the indicator numbers.
+    1:
+      # The item that'll appear on top of the chest, not the actual reward.
+      display-item: 'OAK_WOOD'
+
+      # The name that'll appear on top of the item in the chest, not the reward.
+      display-name: "&3Name Example"
+
+      # The chance of getting this reward.
+      chance: 5
+
+      # Messages to send the player if this reward is selected, same format as the on-start above.
+      # The value inside the brackets mean the type of message, it can either be:
+      # [message] - Basic message, just shows it in chat.
+      # [broadcast] - Broadcasts the message to everyone online.
+      # [title] - Displays a title for the player that is opening. Usage: [title] TITLE | Subtitle | TIME IT'LL SHOW (int seconds)
+      # [firework] - Spawns a firework on top of the player. Usage: [firework] red,green,blue;red,green,blue
+      # On fireworks separate each RBG with a comma and each color with a ;. Example: [fireworks] 200,0,0;0,200,0;0,0,200
+      on-open:
+        - '[message] &cYou won 32 wood!'
+
+      # If you want to give the player an item use here.
+      # item - The material you want the item to be.
+      # amount - the amount of items to give.
+      # name - The name of the item.
+      # lore - the lore of the item. Use \n to add a new line.
+      # enchantment - Add enchantments to the item. Separate each enchantment with ; and value with :, example: efficiency:5;looting:3
+      items:
+        - 'item:OAK_WOOD | amount:32 | name:&cItem Name'
+
+      # You can also do commands.
+      # Inside brackets just like the message you can either put:
+      # [console] command - will run the command as console.
+      # [player] command - will run with the player's permission.
+      # [permission.node] command - will run as the player with the permission inserted.
+      commands:
+        - '[essentials.fly] fly'
+        - '[console] say hello'
+
+    2:
+      display-item: 'STONE'
+      display-name: "&cName Example 2"
+      chance: 5
+      on-open: []
+      items: []
+      commands:
+        - '[console] give %player% stone 1'
